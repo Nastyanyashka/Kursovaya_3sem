@@ -8,7 +8,11 @@ namespace Kursovaya_3sem.Interfaces
 {
     public interface IATS
     {
+        public void GenerateNextSignalTime(double currentTime);
+        public bool CheckAndGenerate(double currentTime);
         int Id { get; }
+        public int MaxTimeOfCall { get; set; }
+        public int IdOfConnectedAts { get; set; }
         ChannelStatus ChannelStatus { get; set; }
         IRegionalATS ConnectedRATS { get; }
         public double ChanceOfTakeCall { get; }

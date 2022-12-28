@@ -13,6 +13,7 @@ namespace Kursovaya_3sem.Interfaces
         public int Id { get;}
         public int MaximumLoad { get;}
         public void TakeCallFromATS(IATS idOfSender,int idOfReceiver);
-        public void EndCall(int idOfConnectedAts);
+        public void EndCall(IATS sender, int idOfConnectedAts);
+        public int CurrentLoad { get; set; }
     }
 }

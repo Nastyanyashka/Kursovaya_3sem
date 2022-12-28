@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Specialized;
 
 namespace Kursovaya_3sem
 {
@@ -20,21 +21,7 @@ namespace Kursovaya_3sem
         private int idOfConnectedATS;
         private double chanceOfTakeCall;
         public int MaxTimeOfCall { get { return maxTimeOfCall; } set { maxTimeOfCall = value; } }
-        public void GenerateNextSignalTime(double currentTime)
-        {
-            var t = rnd.NextDouble() * maxTimeOfCall;
-            nextStartSignalTime = currentTime + t;
-            nextStopSignalTime = currentTime + t + rnd.NextDouble() * (maxTimeOfCall - t);
-        }
-        public virtual bool CheckAndGenerate(double currentTime)
-        {
-            if (nextStopSignalTime <= currentTime)
-            {
-                GenerateNextSignalTime(currentTime);
-                return true;
-            }
-            return false;
-        }
+       
         public double ChanceOfTakeCall { get { return chanceOfTakeCall; } }
         public DefaultATS(IRegionalATS toConnectWith, double chanceOfTakeCall, int maxTimeOfCall)
         {
@@ -42,8 +29,36 @@ namespace Kursovaya_3sem
             idcounter++;
             channelStatus = ChannelStatus.NotBusy;
             connectedRATS = toConnectWith;
-            this.chanceOfTakeCall = chanceOfTakeCall;
+            this.chanceOfTakeCall = chanceOfTakeCall/100;
             this.maxTimeOfCall = maxTimeOfCall;
+            
+        }
+        public void GenerateNextSignalTime(double currentTime)
+        {
+            var t = rnd.NextDouble() * maxTimeOfCall;
+            nextStartSignalTime = currentTime + t;
+
+            nextStopSignalTime = nextStartSignalTime + t + rnd.NextDouble() * (maxTimeOfCall -t);
+        }
+        public bool CheckAndGenerate(double currentTime)
+        {
+            if(nextStopSignalTime <= currentTime && channelStatus == ChannelStatus.NotBusy)
+            {
+                GenerateNextSignalTime(currentTime);
+                return true;
+            }
+            if (nextStopSignalTime <= currentTime && channelStatus == ChannelStatus.Busy)
+            {
+                GenerateNextSignalTime(currentTime);
+                EndCall();
+                return true;
+            }
+            if (nextStartSignalTime <= currentTime && nextStopSignalTime > currentTime && channelStatus == ChannelStatus.NotBusy)
+            {
+                MakeCall(idOfConnectedATS);
+                
+            }
+            return false;
         }
         public int Id
         {
@@ -57,20 +72,17 @@ namespace Kursovaya_3sem
 
         public void MakeCall(int idOfReceiver)
         {
-            connectedRATS.TakeCallFromATS(this,idOfReceiver);
-            channelStatus = ChannelStatus.Busy;
+          connectedRATS.TakeCallFromATS(this, idOfReceiver);
         }
 
         public void TakeCall(int idOfSender)
         {
-            this.channelStatus = ChannelStatus.Busy;
             idOfConnectedATS = idOfSender;
         }
 
         public void EndCall()
         {
-            this.channelStatus = ChannelStatus.NotBusy;
-            this.connectedRATS.EndCall(idOfConnectedATS);
+            this.connectedRATS.EndCall(this,idOfConnectedATS);
         }
     }
 }

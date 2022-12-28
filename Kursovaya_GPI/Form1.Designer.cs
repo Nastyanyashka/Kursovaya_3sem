@@ -38,9 +38,12 @@
             this.textBoxChanceOfTakeCall = new System.Windows.Forms.TextBox();
             this.textBoxMaxTimeOfCall = new System.Windows.Forms.TextBox();
             this.labelMaxTimeOfCall = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelCurrentLoad = new System.Windows.Forms.Label();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.textBoxAmountOfModels = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelLoadOfFirstRATS = new System.Windows.Forms.Label();
+            this.labelLoadOfSecondRATS = new System.Windows.Forms.Label();
+            this.labelLoadOfThirdRATS = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -117,36 +120,64 @@
             this.labelMaxTimeOfCall.TabIndex = 8;
             this.labelMaxTimeOfCall.Text = "Maximum time of call";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(652, 211);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 15);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Current load: ";
-            // 
-            // labelCurrentLoad
-            // 
-            this.labelCurrentLoad.AutoSize = true;
-            this.labelCurrentLoad.Location = new System.Drawing.Point(726, 211);
-            this.labelCurrentLoad.Name = "labelCurrentLoad";
-            this.labelCurrentLoad.Size = new System.Drawing.Size(25, 15);
-            this.labelCurrentLoad.TabIndex = 10;
-            this.labelCurrentLoad.Text = "123";
-            // 
             // timerUpdate
             // 
             this.timerUpdate.Enabled = true;
             this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
+            // 
+            // textBoxAmountOfModels
+            // 
+            this.textBoxAmountOfModels.Location = new System.Drawing.Point(12, 257);
+            this.textBoxAmountOfModels.Name = "textBoxAmountOfModels";
+            this.textBoxAmountOfModels.Size = new System.Drawing.Size(100, 23);
+            this.textBoxAmountOfModels.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 239);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Amount of models";
+            // 
+            // labelLoadOfFirstRATS
+            // 
+            this.labelLoadOfFirstRATS.AutoSize = true;
+            this.labelLoadOfFirstRATS.Location = new System.Drawing.Point(17, 329);
+            this.labelLoadOfFirstRATS.Name = "labelLoadOfFirstRATS";
+            this.labelLoadOfFirstRATS.Size = new System.Drawing.Size(94, 15);
+            this.labelLoadOfFirstRATS.TabIndex = 13;
+            this.labelLoadOfFirstRATS.Text = "Load of 1st RATS";
+            // 
+            // labelLoadOfSecondRATS
+            // 
+            this.labelLoadOfSecondRATS.AutoSize = true;
+            this.labelLoadOfSecondRATS.Location = new System.Drawing.Point(262, 329);
+            this.labelLoadOfSecondRATS.Name = "labelLoadOfSecondRATS";
+            this.labelLoadOfSecondRATS.Size = new System.Drawing.Size(99, 15);
+            this.labelLoadOfSecondRATS.TabIndex = 14;
+            this.labelLoadOfSecondRATS.Text = "Load of 2nd RATS";
+            // 
+            // labelLoadOfThirdRATS
+            // 
+            this.labelLoadOfThirdRATS.AutoSize = true;
+            this.labelLoadOfThirdRATS.Location = new System.Drawing.Point(572, 329);
+            this.labelLoadOfThirdRATS.Name = "labelLoadOfThirdRATS";
+            this.labelLoadOfThirdRATS.Size = new System.Drawing.Size(96, 15);
+            this.labelLoadOfThirdRATS.TabIndex = 15;
+            this.labelLoadOfThirdRATS.Text = "Load of 3rd RATS";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelCurrentLoad);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelLoadOfThirdRATS);
+            this.Controls.Add(this.labelLoadOfSecondRATS);
+            this.Controls.Add(this.labelLoadOfFirstRATS);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxAmountOfModels);
             this.Controls.Add(this.labelMaxTimeOfCall);
             this.Controls.Add(this.textBoxMaxTimeOfCall);
             this.Controls.Add(this.textBoxChanceOfTakeCall);
@@ -174,8 +205,11 @@
         private TextBox textBoxChanceOfTakeCall;
         private TextBox textBoxMaxTimeOfCall;
         private Label labelMaxTimeOfCall;
-        private Label label1;
-        private Label labelCurrentLoad;
         private System.Windows.Forms.Timer timerUpdate;
+        private TextBox textBoxAmountOfModels;
+        private Label label2;
+        private Label labelLoadOfFirstRATS;
+        private Label labelLoadOfSecondRATS;
+        private Label labelLoadOfThirdRATS;
     }
 }
