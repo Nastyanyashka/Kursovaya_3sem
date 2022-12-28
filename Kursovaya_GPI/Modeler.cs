@@ -13,7 +13,6 @@ namespace Kursovaya_GPI
     {
         private double time = 0;
         List<DefaultRegionalATS> list = new List<DefaultRegionalATS>();
-        Random rand = new Random();
         public Modeler(List<DefaultRegionalATS> list) { 
             this.list = list;
         }
