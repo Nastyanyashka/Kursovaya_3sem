@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kursovaya_3sem.Interfaces
+namespace Kursovaya_GPI
 {
-    public enum ChannelStatus
+    internal class Servicee
     {
-        Busy,
-        NotBusy
     }
 }

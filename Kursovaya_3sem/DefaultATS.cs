@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kursovaya_3sem
 {
-    internal class DefaultATS : IATS
+    public class DefaultATS : IATS
     {
         private static int idcounter = 0;
         private int id;

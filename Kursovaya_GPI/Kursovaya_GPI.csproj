@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Kursovaya_3sem\Kursovaya_3sem.csproj" />
+  </ItemGroup>
+
 </Project>

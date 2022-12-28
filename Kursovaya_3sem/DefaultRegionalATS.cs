@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kursovaya_3sem
 {
-    internal class DefaultRegionalATS : IRegionalATS
+    public class DefaultRegionalATS : IRegionalATS
     {
 
         private List<IRegionalATS> connectedRATS;

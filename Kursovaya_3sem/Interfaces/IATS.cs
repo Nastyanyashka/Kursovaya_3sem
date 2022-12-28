@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kursovaya_3sem.Interfaces
 {
-    internal interface IATS
+    public interface IATS
     {
         int Id { get; }
         ChannelStatus ChannelStatus { get; set; }
