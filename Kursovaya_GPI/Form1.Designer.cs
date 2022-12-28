@@ -62,7 +62,6 @@
             this.textBoxDeltaT.Name = "textBoxDeltaT";
             this.textBoxDeltaT.Size = new System.Drawing.Size(100, 23);
             this.textBoxDeltaT.TabIndex = 1;
-
             // 
             // labelDeltaT
             // 
@@ -79,7 +78,6 @@
             this.textBoxMaxLoadRATS.Name = "textBoxMaxLoadRATS";
             this.textBoxMaxLoadRATS.Size = new System.Drawing.Size(100, 23);
             this.textBoxMaxLoadRATS.TabIndex = 3;
-  
             // 
             // labelMaxLoadRATS
             // 
@@ -105,7 +103,6 @@
             this.textBoxChanceOfTakeCall.Name = "textBoxChanceOfTakeCall";
             this.textBoxChanceOfTakeCall.Size = new System.Drawing.Size(100, 23);
             this.textBoxChanceOfTakeCall.TabIndex = 6;
-
             // 
             // textBoxMaxTimeOfCall
             // 
@@ -113,7 +110,6 @@
             this.textBoxMaxTimeOfCall.Name = "textBoxMaxTimeOfCall";
             this.textBoxMaxTimeOfCall.Size = new System.Drawing.Size(100, 23);
             this.textBoxMaxTimeOfCall.TabIndex = 7;
-
             // 
             // labelMaxTimeOfCall
             // 
@@ -135,7 +131,6 @@
             this.textBoxAmountOfModels.Name = "textBoxAmountOfModels";
             this.textBoxAmountOfModels.Size = new System.Drawing.Size(100, 23);
             this.textBoxAmountOfModels.TabIndex = 11;
-
             // 
             // label2
             // 
@@ -193,7 +188,7 @@
             this.Controls.Add(this.textBoxDeltaT);
             this.Controls.Add(this.buttonStart);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Simulation ATS";
             this.ResumeLayout(false);
             this.PerformLayout();
 
