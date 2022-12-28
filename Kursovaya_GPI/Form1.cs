@@ -24,6 +24,20 @@ namespace Kursovaya_GPI
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Convert.ToDouble(textBoxDeltaT.Text);
+                Convert.ToInt32(textBoxDeltaT.Text);
+                Convert.ToInt32(textBoxDeltaT.Text);
+                Convert.ToInt32(textBoxDeltaT.Text);
+                Convert.ToInt32(textBoxDeltaT.Text);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Some of textboxes didnt fill");
+                return;
+            }
             maxLoad = Convert.ToInt32(textBoxMaxLoadRATS.Text);
             for (int amountofmodels = 0; amountofmodels < Convert.ToInt32(textBoxAmountOfModels.Text); amountofmodels++)
             {
@@ -78,11 +92,77 @@ namespace Kursovaya_GPI
                 labelLoadOfFirstRATS.Text = "Mean Load of 1st RATSs: " + (summMeanLoadRATS[0] / countOfLoadRATS[0]).ToString();
                 labelLoadOfSecondRATS.Text = "Mean Load of 2st RATSs: " + (summMeanLoadRATS[1] / countOfLoadRATS[1]).ToString();
                 labelLoadOfThirdRATS.Text = "Mean Load of 3st RATSs: " + (summMeanLoadRATS[2] / countOfLoadRATS[2]).ToString();
-                if(summMeanLoadRATS[0] / countOfLoadRATS[0] >1 || summMeanLoadRATS[1] / countOfLoadRATS[1]>1 || summMeanLoadRATS[2] / countOfLoadRATS[2]>1)
+                if (summMeanLoadRATS[0] / countOfLoadRATS[0] > 1 || summMeanLoadRATS[1] / countOfLoadRATS[1] > 1 || summMeanLoadRATS[2] / countOfLoadRATS[2] > 1)
                 {
                     MessageBox.Show("One of stations is overloaded");
                     timerUpdate.Enabled = false;
+                    return;
                 }
+            }
+        }
+
+        private void textBoxDeltaT_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToDouble(textBoxDeltaT.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Invalid argument of Delta t");
+                textBoxDeltaT.Text = "";
+            }
+        }
+
+        private void textBoxMaxLoadRATS_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(textBoxDeltaT.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Invalid argument of maximum load of RATSs");
+                textBoxMaxLoadRATS.Text = "";
+            }
+        }
+
+        private void textBoxChanceOfTakeCall_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(textBoxDeltaT.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Invalid argument of chance of taking call");
+                textBoxChanceOfTakeCall.Text = "";
+            }
+        }
+
+        private void textBoxMaxTimeOfCall_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(textBoxDeltaT.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Invalid argument of maximum time of calling");
+                textBoxMaxTimeOfCall.Text = "";
+            }
+        }
+
+        private void textBoxAmountOfModels_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(textBoxDeltaT.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Invalid argument of amount of models");
+                textBoxAmountOfModels.Text = "";
             }
         }
     }

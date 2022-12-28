@@ -62,6 +62,7 @@
             this.textBoxDeltaT.Name = "textBoxDeltaT";
             this.textBoxDeltaT.Size = new System.Drawing.Size(100, 23);
             this.textBoxDeltaT.TabIndex = 1;
+
             // 
             // labelDeltaT
             // 
@@ -78,6 +79,7 @@
             this.textBoxMaxLoadRATS.Name = "textBoxMaxLoadRATS";
             this.textBoxMaxLoadRATS.Size = new System.Drawing.Size(100, 23);
             this.textBoxMaxLoadRATS.TabIndex = 3;
+  
             // 
             // labelMaxLoadRATS
             // 
@@ -103,6 +105,7 @@
             this.textBoxChanceOfTakeCall.Name = "textBoxChanceOfTakeCall";
             this.textBoxChanceOfTakeCall.Size = new System.Drawing.Size(100, 23);
             this.textBoxChanceOfTakeCall.TabIndex = 6;
+
             // 
             // textBoxMaxTimeOfCall
             // 
@@ -110,6 +113,7 @@
             this.textBoxMaxTimeOfCall.Name = "textBoxMaxTimeOfCall";
             this.textBoxMaxTimeOfCall.Size = new System.Drawing.Size(100, 23);
             this.textBoxMaxTimeOfCall.TabIndex = 7;
+
             // 
             // labelMaxTimeOfCall
             // 
@@ -131,6 +135,7 @@
             this.textBoxAmountOfModels.Name = "textBoxAmountOfModels";
             this.textBoxAmountOfModels.Size = new System.Drawing.Size(100, 23);
             this.textBoxAmountOfModels.TabIndex = 11;
+
             // 
             // label2
             // 
@@ -153,7 +158,7 @@
             // labelLoadOfSecondRATS
             // 
             this.labelLoadOfSecondRATS.AutoSize = true;
-            this.labelLoadOfSecondRATS.Location = new System.Drawing.Point(262, 329);
+            this.labelLoadOfSecondRATS.Location = new System.Drawing.Point(276, 329);
             this.labelLoadOfSecondRATS.Name = "labelLoadOfSecondRATS";
             this.labelLoadOfSecondRATS.Size = new System.Drawing.Size(99, 15);
             this.labelLoadOfSecondRATS.TabIndex = 14;
