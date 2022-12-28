@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kursovaya_3sem.Interfaces
 {
-    internal interface ChannelStatus
+    internal enum ChannelStatus
     {
+        Busy,
+        NotBusy
     }
 }
